@@ -33,7 +33,7 @@ def palindrome_b(str):
   j = len(str) - 1
 
   while (i < j):
-    [new_str[i], new_str[j]] = new_str[j], new_str[i]
+    new_str[i], new_str[j] = new_str[j], new_str[i]
     i+=1
     j-=1
 
@@ -53,7 +53,7 @@ def palindrome(str):
   j = str_len
   flag = True
 
-  while (i < j):
+  while (i <= j):
     if str[i] == str[j]:
       flag
     else:

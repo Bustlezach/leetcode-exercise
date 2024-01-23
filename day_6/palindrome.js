@@ -42,7 +42,7 @@ function palindrome(str) {
   let flag;
   let i = 0;
   
-  for (let j = str.length - 1; j >= 0; j--) {
+  for (let j = str.length - 1; j >= i; j--) {
     if (i < str.length && str[i] === str[j]) {
       flag = true;
       i++;
