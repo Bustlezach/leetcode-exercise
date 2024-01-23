@@ -22,6 +22,28 @@ def brute_palindrome(str):
   return False
 
 
+# Second method
+
+def palindrome_b(str):
+  new_str = []
+  for i in str:
+    new_str.append(i)
+
+  i = 0
+  j = len(str) - 1
+
+  while (i < j):
+    [new_str[i], new_str[j]] = new_str[j], new_str[i]
+    i+=1
+    j-=1
+
+  new_str = ''.join(new_str)
+  if (str == new_str):
+    return True
+  else:
+    return False
+
+
 # Double poiner method
 
 def palindrome(str):
@@ -43,12 +65,6 @@ def palindrome(str):
 
 
 
-print(palindrome(a))
-print(palindrome(b))
-print(palindrome(c))
-print(palindrome(d))
-print(palindrome(e))
-print(palindrome(f))
 
 print(' ')
 print('brute force')
@@ -60,3 +76,26 @@ print(brute_palindrome(c))
 print(brute_palindrome(d))
 print(brute_palindrome(e))
 print(brute_palindrome(f))
+
+print(' ')
+print('Second method')
+print('')
+
+print(palindrome_b(a))
+print(palindrome_b(b))
+print(palindrome_b(c))
+print(palindrome_b(d))
+print(palindrome_b(e))
+print(palindrome_b(f))
+
+
+print(' ')
+print('Two pointer method')
+print('')
+
+print(palindrome(a))
+print(palindrome(b))
+print(palindrome(c))
+print(palindrome(d))
+print(palindrome(e))
+print(palindrome(f))

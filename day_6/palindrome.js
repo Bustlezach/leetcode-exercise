@@ -20,6 +20,20 @@ function brutePalindrome (str) {
   return false;
 }
 
+// Second method
+
+function palindromeB(str) {
+  let newStr = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr.push(str[i]);
+  }
+  newStr = newStr.join('');
+  if (str === newStr) {
+    return true;
+  }
+  return false;
+}
+
 
 // Using double pointer technique
 
@@ -40,12 +54,7 @@ function palindrome(str) {
   return flag;
 }
 
-console.log(palindrome(a));
-console.log(palindrome(b));
-console.log(palindrome(c));
-console.log(palindrome(d));
-console.log(palindrome(e));
-console.log(palindrome(f));
+
 
 console.log(' ');
 console.log('brute force');
@@ -57,3 +66,26 @@ console.log(brutePalindrome(c));
 console.log(brutePalindrome(d));
 console.log(brutePalindrome(e));
 console.log(brutePalindrome(f));
+
+console.log(' ');
+console.log('Second method');
+console.log('');
+
+console.log(palindromeB(a));
+console.log(palindromeB(b));
+console.log(palindromeB(c));
+console.log(palindromeB(d));
+console.log(palindromeB(e));
+console.log(palindromeB(f));
+
+
+console.log(' ');
+console.log('Two pointers method');
+console.log('');
+
+console.log(palindrome(a));
+console.log(palindrome(b));
+console.log(palindrome(c));
+console.log(palindrome(d));
+console.log(palindrome(e));
+console.log(palindrome(f));
