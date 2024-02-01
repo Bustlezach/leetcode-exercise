@@ -58,6 +58,8 @@ function firstLastPosition(arr, target) {
   return range;
 }
 
+
+// Test cases:
 const a = [0, 1, 2, 3, 3, 3, 4, 6];
 console.log(firstLastPosition(a, 3));
 console.log(firstLastPosition([3, 5, 7], 3));
