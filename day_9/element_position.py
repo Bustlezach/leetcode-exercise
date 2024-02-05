@@ -57,8 +57,67 @@ def left_right_position(arr, target):
   return result
 
 
+
+
+
+def left_extreme(arr, l, r, target, result):
+  while(l <= r):
+    m = (l + r) // 2
+
+    if (arr[m] == target):
+      if (m == 0 or arr[m - 1] != target):
+        result[0] = m
+        return result
+      else:
+        r = m - 1
+    elif (target < arr[m]):
+      r = m -1
+    else:
+      l = m + 1
+
+
+def right_extreme(arr, l, r, target, result):
+  while (l <= r):
+    m = (l + r) // 2
+
+    if (target == arr[m]):
+      if (m == (len(arr) - 1) or arr[m + 1] != target):
+        result[1] = m
+        return result
+      else:
+        l = m + 1
+    elif (target < arr[m]):
+      r = m - 1
+    else:
+      l = m + 1
+    
+
+
+
+def left_right_position_iter(arr, target):
+  left = 0
+  right = len(arr) - 1
+  result = [-1, -1]
+
+  left_extreme(arr, left, right, target, result)
+  right_extreme(arr, left, right, target, result)
+
+  return result
+
+
 # Test cases:
 a = [0, 1, 2, 3, 3, 3, 4, 6]
 print(left_right_position(a, 3))
 print(left_right_position([3, 5, 7], 3))
 print(left_right_position([3, 5, 7], 7))
+print(left_right_position([1, 1, 2, 2, 2, 3, 4], 2))
+print(left_right_position([1, 1, 2, 2, 2, 3, 4], 1))
+print(left_right_position([1, 1, 2, 2, 2, 3, 4], 4))
+print(left_right_position([1, 1, 2, 2, 2, 3, 4], 5))
+print(left_right_position_iter(a, 3))
+print(left_right_position_iter([3, 5, 7], 3))
+print(left_right_position_iter([3, 5, 7], 7))
+print(left_right_position_iter([1, 1, 2, 2, 2, 3, 4], 2))
+print(left_right_position_iter([1, 1, 2, 2, 2, 3, 4], 1))
+print(left_right_position_iter([1, 1, 2, 2, 2, 3, 4], 4))
+print(left_right_position_iter([1, 1, 2, 2, 2, 3, 4], 5))
