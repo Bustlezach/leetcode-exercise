@@ -41,7 +41,7 @@ print('############### Right pyramid #############')
 print('')
 
 def right_pyramid(n):
-  for i in range(n):
+  for i in range(1, n+1):
     x = '* '
     x *= i
     space = '  ' * (n - i)
@@ -54,10 +54,47 @@ print('############### Normal pyramid #############')
 print('')
 
 def pyramid(n):
-  for i in range(n+1):
+  for i in range(1, n+1):
     x = '* '
     x *= i
     space = ' ' * (n - i)
     print(space + x)
 
 pyramid(6)
+
+print('')
+print('############### Diamond #############')
+print('')
+
+def diamond(n):
+  for i in range(1, n+1):
+    x = '* '
+    x *= i
+    space = ' ' * (n - i)
+    print(space + x)
+  for i in reversed(range(n)):
+    x = '* '
+    x *= i
+    space = ' ' * (n - i)
+    print(space + x)
+
+
+diamond(5)
+
+print('')
+print('############### #############')
+print('')
+
+def pattern(n):
+  for i in reversed(range(1, n+1)):
+    x = '* '
+    x *= i
+    space = ' ' * (n - i)
+    print(space + x)
+  for i in range(2, n+1):
+    x = '* '
+    x *= i
+    space = ' ' * (n - i)
+    print(space + x)
+
+pattern(5)
