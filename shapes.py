@@ -1,5 +1,5 @@
 """ Square """ 
-print('\n ############### ############# \n')
+print('\n ############### SQUARE ############# \n')
 def square(n):
   for i in range(n):
     x = '* '
@@ -8,7 +8,7 @@ def square(n):
 
 square(5)
 
-print('\n ############### ############# \n')
+print('\n ############### RECTANGLE ############# \n')
 """ Rectangle m*n """
 
 # m is length
@@ -22,7 +22,7 @@ def rectangle(m, n):
 
 rectangle(5, 3)
 
-print('\n ############### ############# \n')
+print('\n ############### LEFT PYRAMID  ############# \n')
 
 def left_pyramid(n):
   for i in range(n+1):
@@ -32,7 +32,7 @@ def left_pyramid(n):
 
 left_pyramid(6)
 
-print('\n ############### ############# \n')
+print('\n ############### RIGHT PYRAMID ############# \n')
 
 def right_pyramid(n):
   for i in range(1, n+1):
@@ -43,7 +43,7 @@ def right_pyramid(n):
 
 right_pyramid(6)
 
-print('\n ############### ############# \n')
+print('\n ############### PYRAMID ############# \n')
 
 def pyramid(n):
   for i in range(1, n+1):
@@ -54,7 +54,7 @@ def pyramid(n):
 
 pyramid(6)
 
-print('\n ############### ############# \n')
+print('\n ############### DIAMOND ############# \n')
 
 def diamond(n):
   for i in range(1, n+1):
