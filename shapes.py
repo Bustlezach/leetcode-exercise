@@ -38,7 +38,7 @@ def right_pyramid(n):
   for i in range(1, n+1):
     x = '* '
     x *= i
-    space = '  ' * (n - i)
+    space = '  ' * (n - i )
     print(space + x)
 
 right_pyramid(6)
