@@ -5,7 +5,7 @@ Construct Singly Linked List - Design a Singly linked list class that has a head
 
 **get(index)** Get the value of the indexth node. If the index is invalid, return -1.
 
-**addAtHead(value)**- Add a node of given value before the first element of the linked list.
+**addAtHead(value)** - Add a node of given value before the first element of the linked list.
 
 **addAtTail(value)** -  Add a node of given value at the last element of the linked list.
 
