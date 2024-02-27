@@ -16,6 +16,16 @@ class Singly_linked_list:
     self.size = 0
 
 
+  def __str__(self):
+    if self.head is None:
+        return "Singly linked list: []"
+    current = self.head
+    nodes = []
+    while current:
+        nodes.append(str(current.value))
+        current = current.next
+    return "Singly linked list: [" + " -> ".join(nodes) + "]"
+
   def get(self, index):
     if index < 0 or index >= self.size: return -1
     counter = 0
@@ -33,7 +43,7 @@ class Singly_linked_list:
     else:
       old_head = self.head
       self.head = node
-      self.head.next = old_head
+      node.next = old_head
     self.size += 1
     return self
   
@@ -43,6 +53,54 @@ class Singly_linked_list:
       self.head = node
       self.tail = node
     else:
+      self.tail.next = node
       self.tail = node
-      self.tail.next = None
     self.size += 1
+    return self
+  
+  def add_at_index(self, index, value):
+    if index < 0 or index >= self.size: return 'Invalid index'
+    if index == 0: return self.add_at_head(value)
+    if index == self.size: return self.add_at_tail(value)
+    node = Node(value)
+    prev = self.get(index - 1)
+    temp = prev.next
+    prev.next = node
+    node.next = temp
+    self.size += 1
+    return self
+  
+  def delete_at_index(self, index):
+    if index < 0 or index >= self.size: return 'Invalid index'
+    if index == 0:
+      temp = self.head
+      self.head = temp.next
+      self.size -= 1
+      return self
+
+    if index == self.size - 1:
+      temp = self.tail
+      prev = self.get(index - 1)
+      self.tail = prev
+      prev.next = None
+      self.size -= 1
+      return self
+    
+    prev = self.get(index - 1)
+    up_next = self.get(index + 1)
+    deletedNote = prev.next
+    prev.next = up_next
+    return self
+
+
+sl = Singly_linked_list()
+result = sl.add_at_head(4)
+result = sl.add_at_head(16)
+result = sl.add_at_tail(9)
+result = sl.add_at_index(1, 12)
+result = sl.add_at_tail(183)
+result = sl.add_at_tail(0)
+result = sl.add_at_tail(20)
+print(result)
+result = sl.delete_at_index(3)
+print(result)

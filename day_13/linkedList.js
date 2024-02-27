@@ -105,6 +105,8 @@ class SinglyLinkedList {
   }
 }
 
+
+// Test
 const sl = new SinglyLinkedList();
 sl.addAtHead(1);
 sl.addAtTail(2);
