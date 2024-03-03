@@ -113,3 +113,4 @@ sl.addAtTail(2);
 sl.addAtIndex(2, 3);
 console.log(sl.get(2));
 console.log(sl)
+console.log(sl)
